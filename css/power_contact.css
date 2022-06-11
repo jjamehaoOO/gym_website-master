@@ -405,7 +405,9 @@ h1{
            text-align: center;
            color: white;
        }
-    
+       .main-footer .container .footer-item h4{
+        font-size: 12px;
+        }
 
 
 }
