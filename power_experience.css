@@ -1,0 +1,701 @@
+/* 如何讓框框是正方形 外框直接設死寬高?! */
+
+/* 如何讓P裡面的文字 置中對其 文字靠左 */
+/* form表單設定送出如何設定傳到哪裡? 希望能送出然後跟用戶說送出成功的alert出現*/
+/* h1下面的線設定寬度=設定在h1下面 所以h1設定寬度 margin=auto後就能控制長度 */
+
+*{padding: 0;
+    margin: 0;
+    list-style: none;}
+    
+body{
+    font-family:微軟正黑體!important;
+    background-color: #363636;
+    }
+    /* 一 */
+ #menu_control{
+    position: absolute;
+    z-index: 2;
+}
+.header{
+    height: 50px;
+    position: relative;
+}
+.logo{
+    width: 60px;
+    height: 40px;
+    margin-left: 10px;
+    box-sizing: border-box;
+    padding-left: 27px;
+    
+}
+.logo img{
+    vertical-align: top;
+}
+.menu_btn{
+    width: 40px;
+    height: 40px;
+    /* background-color: violet; */
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+.menu_btn span{
+    opacity: 0;
+    color: #fff;
+}
+.menu_btn::before{
+    content: "";
+    position: absolute;
+    height: 2px;
+    left: 2px;
+    width: 36px;
+    background-color: #aaa;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    box-shadow: 0px 8px 0px #aaa,
+                0px -8px 0px #aaa;
+   }
+   nav{
+       width: 100%;
+       height: calc(100vh - 50px);
+       padding-right: 27px;
+       padding-top: 27px;
+       position: absolute;
+       top: 50px;
+       left: 0;
+       left: -100%;
+       transform: .5s;
+       text-align: center;
+       z-index: 3;
+   }
+   nav a{
+       display: block;
+       text-decoration: none;
+       color:white;
+       padding: 10px 20px;
+       background-color: #363636;
+   }
+   nav a:hover{
+       color:#fca311;
+       
+   }
+   #menu_control{
+       /* visibility: hidden; */
+       display: none;
+   }
+
+   #menu_control:checked ~ .header nav{
+       left: 0;
+   }
+   @media screen and (min-width: 768px){
+       .menu_btn{
+           display: none;
+       }
+       .header{
+           display: flex;
+           justify-content: space-between;
+           background-color: transparent;
+           align-items: center;
+       }
+       .logo a{
+           display: block;
+           height: 40px;
+
+
+           
+       }
+      
+     
+       nav{
+           position: relative;
+           left: 0;
+           display: flex;
+           width: auto;
+           height: auto;
+           top: 0;
+       }
+       nav a{
+           border-bottom: none;
+
+       }
+       nav a:hover{
+           color:#fca311;
+         
+       }
+   }
+ /* 一 */
+ #menu_control{
+     position: absolute;
+     z-index: 2;
+ }
+ .header{
+     height: 50px;
+     position: relative;
+ }
+ .logo{
+     width: 60px;
+     height: 40px;
+     margin-left: 10px;
+     box-sizing: border-box;
+     padding-left: 27px;
+     
+ }
+ .logo img{
+     vertical-align: top;
+ }
+ .menu_btn{
+     width: 40px;
+     height: 40px;
+     /* background-color: violet; */
+     display: block;
+     position: absolute;
+     top: 5px;
+     right: 10px;
+ }
+ .menu_btn span{
+     opacity: 0;
+     color: #fff;
+ }
+ .menu_btn::before{
+     content: "";
+     position: absolute;
+     height: 2px;
+     left: 2px;
+     width: 36px;
+     background-color: #aaa;
+     top: 0;
+     bottom: 0;
+     margin: auto;
+     box-shadow: 0px 8px 0px #aaa,
+                 0px -8px 0px #aaa;
+    }
+    nav{
+        width: 100%;
+        height: calc(100vh - 50px);
+        padding-right: 27px;
+        padding-top: 27px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        left: -100%;
+        transform: .5s;
+        text-align: center;
+        z-index: 3;
+    }
+    nav a{
+        display: block;
+        text-decoration: none;
+        color:white;
+        padding: 10px 20px;
+        background-color: #363636;
+    }
+    nav a:hover{
+        color:#fca311;
+        
+    }
+    #menu_control{
+        /* visibility: hidden; */
+        display: none;
+    }
+
+    #menu_control:checked ~ .header nav{
+        left: 0;
+    }
+    @media screen and (min-width: 768px){
+        .menu_btn{
+            display: none;
+        }
+        .header{
+            display: flex;
+            justify-content: space-between;
+            background-color: transparent;
+            align-items: center;
+        }
+        .logo a{
+            display: block;
+            height: 40px;
+
+
+            
+        }
+       
+      
+        nav{
+            position: relative;
+            left: 0;
+            display: flex;
+            width: auto;
+            height: auto;
+            top: 0;
+        }
+        nav a{
+            border-bottom: none;
+
+        }
+        nav a:hover{
+            color:#fca311;
+          
+        }
+    }
+    /* 一 */
+ #menu_control{
+    position: absolute;
+    z-index: 2;
+}
+.header{
+    height: 50px;
+    position: relative;
+}
+.logo{
+    width: 60px;
+    height: 40px;
+    margin-left: 10px;
+    box-sizing: border-box;
+    padding-left: 27px;
+    
+}
+.logo img{
+    vertical-align: top;
+}
+.menu_btn{
+    width: 40px;
+    height: 40px;
+    /* background-color: violet; */
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+.menu_btn span{
+    opacity: 0;
+    color: #fff;
+}
+.menu_btn::before{
+    content: "";
+    position: absolute;
+    height: 2px;
+    left: 2px;
+    width: 36px;
+    background-color: #aaa;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    box-shadow: 0px 8px 0px #aaa,
+                0px -8px 0px #aaa;
+   }
+   nav{
+       width: 100%;
+       height: calc(100vh - 50px);
+       padding-right: 27px;
+       padding-top: 27px;
+       position: absolute;
+       top: 50px;
+       left: 0;
+       left: -100%;
+       transform: .5s;
+       text-align: center;
+       z-index: 3;
+   }
+   nav a{
+       display: block;
+       text-decoration: none;
+       color:white;
+       padding: 10px 20px;
+       background-color: #363636;
+   }
+   nav a:hover{
+       color:#fca311;
+       
+   }
+   #menu_control{
+       /* visibility: hidden; */
+       display: none;
+   }
+
+   #menu_control:checked ~ .header nav{
+       left: 0;
+   }
+   @media screen and (min-width: 768px){
+       .menu_btn{
+           display: none;
+       }
+       .header{
+           display: flex;
+           justify-content: space-between;
+           background-color: transparent;
+           align-items: center;
+       }
+       .logo a{
+           display: block;
+           height: 40px;
+
+
+           
+       }
+      
+     
+       nav{
+           position: relative;
+           left: 0;
+           display: flex;
+           width: auto;
+           height: auto;
+           top: 0;
+       }
+       nav a{
+           border-bottom: none;
+
+       }
+       nav a:hover{
+           color:#fca311;
+         
+       }
+   }
+   /* 二 */
+    .title_experience{
+        width: 100%;
+        margin: auto;
+        max-width: 1200px;
+        position:relative;
+        box-sizing: border-box;
+        margin-bottom: 5%;
+    
+    }
+    .title_experience .pic img{
+        width: 100%;
+        /* object-fit: cover; */
+        /* aspect-ratio: 2/1; */
+        vertical-align: middle;
+    }
+    .title_experience h1{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        bottom: 42%;
+        color: white;
+        letter-spacing: 0.15em;
+        font-size: 20px;
+        
+    }
+    .feeetrial{
+        width: 80%;
+        margin: auto;
+    }
+    .feeetrial .bigtxt{
+        font-weight: 700;
+        font-size: 78px;
+        padding: 10px 0px 0px 0px;
+        box-sizing: border-box;
+        text-align: center;
+        color: red;
+    }
+    .feeetrial .txt{
+        width: 100%;
+        outline: 15px solid red;
+        padding: 20px;
+        box-sizing: border-box;
+        color: white;
+        text-align: center
+    }
+    .feeetrial .txt p{
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .feeetrial .txt img{
+        width: 100%;
+        aspect-ratio: 2/1;
+        object-fit: cover;
+        padding: 20px;
+        box-sizing: border-box;
+
+    }
+    .feeetrial .txt #myVideo{
+        width: 100%;
+        height: 500px;
+    }
+    .form_txt{
+        padding: 20px;
+        box-sizing: border-box;
+        margin-top: 30px
+        ;
+    }
+    .form_txt h2{
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1.15;
+        color: white;
+    }
+    .form_txt p{
+        text-align: center;
+        color: white;
+        padding: 20px;
+        box-sizing: border-box;
+        
+    }
+    form{
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    form h2{
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1.15;
+        color: white;
+    }
+    form p{
+        text-align: center;
+        color: white;
+        padding: 20px;
+        box-sizing: border-box;
+        
+    } 
+    /* 桌機專用 */
+    @media screen and (min-width: 768px){
+        .big_frame{
+            max-width: 1200px;
+            display: flex;
+            margin: auto;
+        }
+        .title_experience{
+            width:100%;
+            position:relative;
+            box-sizing: border-box;
+            margin-bottom: 5%;
+            margin-top: 2%;
+        }
+        .title_experience .pic img{
+         width: 100%;
+         object-fit: cover;  
+         vertical-align: middle;
+        }
+        .title_experience h1{
+         position: absolute;
+         width: 100%;
+         text-align: center;
+         box-sizing: border-box;
+         bottom: 45%;
+         color: white;
+         letter-spacing: 0.15em;
+         font-size: 72px;
+         
+         
+        }
+    .feeetrial{
+        width: 600px;
+        padding: 30px;
+        
+    }
+    .feeetrial .bigtxt{
+        font-weight: 700;
+        font-size: 78px;
+        padding: 10px 0px 0px 0px;
+        box-sizing: border-box;
+        
+        color: red;
+    }
+    .feeetrial .bigtxt{
+        font-weight: 700;
+        font-size: 78px;
+        padding: 10px 0px 0px 0px;
+        box-sizing: border-box;
+        margin-bottom: -6px;
+        color: red;
+        
+    }
+    .feeetrial .txt{
+        width: 100%;
+        outline: 15px solid red;
+        padding: 20px;
+        box-sizing: border-box;
+        color: white;
+        text-align: center;
+        
+    }
+    .feeetrial .txt img{
+        width: 600px;
+        height: 600px;
+        /* aspect-ratio: 2/1; */
+        object-fit: cover;
+        padding: 20px;
+        box-sizing: border-box;
+     }
+     .feeetrial .txt #myVideo{
+         width: 100%;
+         height: 500px;
+     }
+    .feeetrial .txt{
+        width: 100%;
+        outline: 15px solid red;
+        padding: 20px;
+        box-sizing: border-box;
+        color: white;
+        text-align: center;
+        
+    }
+    
+    .feeetrial .txt p{
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: left;
+        color: #ababab;
+    }
+    .feeetrial .txt img{
+        width: 100%;
+        aspect-ratio: 2/1;
+        object-fit: cover;
+        padding: 20px;
+        box-sizing: border-box;
+
+    }
+    .form_txt{
+        width: 600px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .form_txt h2{
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1.15;
+        color: white;
+       
+    }
+   
+    .form_txt p{
+        text-align: center;
+        color: white;
+        padding: 20px;
+        box-sizing: border-box;
+       
+        
+    }
+  
+    form{
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    form h2{
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1.15;
+        color: white;
+    }
+    form p{
+        text-align: center;
+        color: white;
+        padding: 20px;
+        box-sizing: border-box;
+        
+    }
+}
+
+/* 八 */
+
+
+
+/* 手機專用 */
+@media screen and (max-width: 768px){
+    .main-footer{
+       width: 100%;
+       
+      
+       
+       margin: auto;}
+       .main-footer .container{
+           display: flex;
+           width: 100%;
+           margin: auto;
+           align-items: center;
+           padding-bottom: 20px;
+           box-sizing: border-box;
+       }
+       .footer-item{
+           width: 0;
+           flex-grow: 1;
+           margin: 0 20px;
+       }
+       .footer-item h4{  
+           
+           font-size: 20px;
+           border-bottom: 1px solid white;
+           margin-bottom: .5em;
+           padding-bottom: .5em;
+           font-weight: 900;
+           color: white;
+       }
+       .footer-item nav{
+           text-align: left;
+           display: flex;
+           flex-direction: column;
+       }
+         .footer-item a{
+           color: #ababab;; 
+           line-height: 1.4;
+           text-decoration: none;
+           padding: 5px 0;
+       }   
+       .main-footer .copyright{
+           text-align: center;
+           color: white;
+       }
+    
+
+
+}
+
+
+/* 平板以上=目前是寫桌機 */
+@media screen and (min-width: 768px){
+   .main-footer{
+       max-width: 1200px;
+       padding: 150px 0 0;
+       margin: auto;
+   }
+   .main-footer .container{
+       display: flex;
+       width: 100%;
+       margin: auto;
+       align-items: center;
+       padding-bottom: 20px;
+       box-sizing: border-box;
+   }
+   .footer-item{
+       width: 0;
+       flex-grow: 1;
+       margin: 0 20px;
+   }
+   .footer-item h4{  
+       font-size: 24px;
+       border-bottom: 1px solid white;
+       margin-bottom: .5em;
+       padding-bottom: .5em;
+       font-weight: 900;
+       color: white;
+   }
+   .footer-item nav{
+       text-align: left;
+       display: flex;
+       flex-direction: column;
+   }
+   .footer-item a{
+       color: #ababab;; 
+       line-height: 1.4;
+       text-decoration: none;
+       padding: 5px 0;
+   }
+   .main-footer .copyright{
+       text-align: center;
+       color: white;
+   }
+   
+}
+
+        
+    

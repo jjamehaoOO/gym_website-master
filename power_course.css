@@ -1,0 +1,452 @@
+/* XX:hover{
+    transform: translateY(-50px); XX被摸到會移動
+    transition: .5s; 摸到的移動速度 
+    transition: .5s ease-in-out;
+    要使用緩入緩出動畫，您可以使用 ease-in-out CSS 關鍵字:
+} */
+/* 在h2下面加border-bottom: 1px solid white;通上上下距離會給padding-bottom: .3em;
+        margin-bottom: .4em; 
+可以跟內容作區分 */
+/* transparent=透明的 */
+
+*{padding: 0;
+    margin: 0;
+    list-style: none;} 
+    body{
+  
+        font-family:微軟正黑體!important;
+background-color: #363636;
+       }
+    
+    
+   /* 一 */
+   #menu_control{
+    position: absolute;
+    z-index: 2;
+}
+.header{
+    height: 50px;
+    position: relative;
+}
+.logo{
+    width: 60px;
+    height: 40px;
+    margin-left: 10px;
+    box-sizing: border-box;
+    padding-left: 27px;
+    
+}
+.logo img{
+    vertical-align: top;
+}
+.menu_btn{
+    width: 40px;
+    height: 40px;
+    /* background-color: violet; */
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+.menu_btn span{
+    opacity: 0;
+    color: #fff;
+}
+.menu_btn::before{
+    content: "";
+    position: absolute;
+    height: 2px;
+    left: 2px;
+    width: 36px;
+    background-color: #aaa;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    box-shadow: 0px 8px 0px #aaa,
+                0px -8px 0px #aaa;
+   }
+   nav{
+       width: 100%;
+       height: calc(100vh - 50px);
+       padding-right: 27px;
+       padding-top: 27px;
+       position: absolute;
+       top: 50px;
+       left: 0;
+       left: -100%;
+       transform: .5s;
+       text-align: center;
+       z-index: 3;
+   }
+   nav a{
+       display: block;
+       text-decoration: none;
+       color:white;
+       padding: 10px 20px;
+       background-color: #363636;
+   }
+   nav a:hover{
+       color:#fca311;
+       
+   }
+   #menu_control{
+       /* visibility: hidden; */
+       display: none;
+   }
+
+   #menu_control:checked ~ .header nav{
+       left: 0;
+   }
+   @media screen and (min-width: 768px){
+       .menu_btn{
+           display: none;
+       }
+       .header{
+           display: flex;
+           justify-content: space-between;
+           background-color: transparent;
+           align-items: center;
+       }
+       .logo a{
+           display: block;
+           height: 40px;
+
+
+           
+       }
+      
+     
+       nav{
+           position: relative;
+           left: 0;
+           display: flex;
+           width: auto;
+           height: auto;
+           top: 0;
+       }
+       nav a{
+           border-bottom: none;
+
+       }
+       nav a:hover{
+           color:#fca311;
+         
+       }
+   }
+
+    /* 二 */
+    .title_course{
+        width: 100%;
+        margin: auto;
+        max-width: 1200px;
+        position:relative;
+        box-sizing: border-box;
+        margin-bottom: 5%;
+        margin-top: 2%;
+    
+    }
+    .title_course .pic img{
+        width: 100%;
+        /* object-fit: cover; */
+        /* aspect-ratio: 2/1; */
+        vertical-align: middle;
+    }
+    .title_course h1{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        bottom: 42%;
+        color: white;
+        letter-spacing: 0.15em;
+        font-size: 20px;
+        
+    }
+    .course .course_big .picture img{
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 2/1;
+        box-shadow:3px 3px 20px 0px #ccc6;
+    }
+    .course .course_big{
+        transform: translateY(0px);
+        transform: .5s ease-in-out;
+        
+    }
+    .course .course_big:hover{transform: translateY(-50px);}
+    .course .course_big .txt h2{
+        width: 100%;
+        margin: auto;
+        color: white;
+        text-align: center;
+        padding: 0px 0px 25px 0px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #606060;
+        padding-bottom: .3em;
+        margin-bottom: .4em;
+        font-weight: 900;
+    }
+    .course_big p{
+        width: 100%;
+        margin: auto;
+        color: #acacac;
+        padding: 10px;
+        box-sizing: border-box;
+        line-height: 1.6;    }
+
+    .small_course{
+          width: 100%;
+        /*! display: flex; */
+        padding: 20px 0px 20px 0px;
+        box-sizing: border-box;
+        transform: translateY(0px);
+        transition: .5s ease-in-out;
+
+    } 
+    .small_course:hover{transform: translateY(-50px);}
+    .small_course img{
+        box-shadow:3px 3px 20px 0px #ccc6;
+        width: 200px;
+       
+       box-sizing: border-box;
+        
+        
+    }
+    .small_course .txt{
+        width: 30%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .small_course h2{
+        /*! width: 30%; */
+        color: white;
+        padding: 10px;
+        box-sizing: border-box;   
+        margin: auto;
+        
+       }
+    .course .small_course p{
+        padding: 10px;
+        margin: auto;
+        color: white;
+        line-height: 25px;
+    }
+    @media screen and (min-width: 768px){
+        .title_course{
+            width:100%;
+            /* max-width: 1200px; */
+            position:relative;
+            box-sizing: border-box;
+            margin-bottom: 5%;
+        
+        }
+        .title_course .pic img{
+         width: 100%;
+         object-fit: cover;
+         /* aspect-ratio: 2/1; */
+         vertical-align: middle;
+        }
+        .title_course h1{
+         position: absolute;
+         width: 100%;
+         text-align: center;
+         box-sizing: border-box;
+         bottom: 45%;
+         color: white;
+         letter-spacing: 0.15em;
+         font-size: 72px;
+         
+        }
+        .course{
+            /*! width: 1200px; */
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+           
+        }
+        .course .course_big{
+            width: 600px;
+            transform: translateY(0px);
+            transition: .5s ease-in-out; 
+            
+            padding: 30px;
+            box-sizing: border-box;
+            
+        }
+        .course .course_big:hover{
+        transform: translateY(-50px);}
+        .course .course_big .picture img{
+            width: 100%;
+            object-fit: cover;
+            aspect-ratio: 2/1;
+            box-shadow:3px 3px 20px 0px #ccc6;
+            height: 350px;
+        }
+        .course .course_big .txt h2{
+            /* width: 40%; */
+            /* margin: auto; */
+            color: white;
+            text-align: center;
+            padding: 50px 0px 50px 0px;
+            box-sizing: border-box;
+        }
+        .course_big .txt {
+            width: 100%;
+            /* margin: auto; */
+            color: white;
+            padding: 10px;
+            box-sizing: border-box;
+            
+           }
+    
+        .small_course{
+            
+            /* width: 100%; */
+            /* flex-direction:row ; */
+            /* flex-wrap: wrap; */
+            /* display: flex; */
+            padding: 15px 0px 15px 0px;
+            box-sizing: border-box;
+            
+            /* height: 200px; */
+            transform: translateY(0px);
+            transition: .5s ease-in-out;
+        } 
+        .small_course:hover{
+            transform: translateY(-15px);
+        }
+        .small_course img{
+            box-shadow:3px 3px 20px 0px #ccc6;
+            width: 300px;
+            aspect-ratio: 2/1;
+            object-fit: cover;
+           box-sizing: border-box;
+            
+            
+        }
+        .small_course .txt{
+            width: 30%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .small_course h2{
+            /* width: 100px; */
+            /*! width: 30%; */
+            color: white;
+            padding: 10px;
+            box-sizing: border-box;   
+            /*! margin: auto; */
+            text-align: left;
+           }
+        .course .small_course p{
+            margin: auto;
+            color: #ababab;
+        }
+        .course .small{
+            padding-top:15px;
+            box-sizing: border-box;
+            /* display: flex;
+            flex-direction: column; */
+        }
+    }
+    /* 八 */
+
+
+
+/* 手機專用 */
+@media screen and (max-width: 768px){
+    .main-footer{
+       width: 100%;
+       max-width: 1200px;
+      
+       
+       margin: auto;}
+       .main-footer .container{
+           display: flex;
+           width: 100%;
+           margin: auto;
+           align-items: center;
+           padding-bottom: 20px;
+           box-sizing: border-box;
+       }
+       .footer-item{
+           width: 0;
+           flex-grow: 1;
+           margin: 0 20px;
+       }
+       .footer-item h4{  
+           
+           font-size: 20px;
+           border-bottom: 1px solid white;
+           margin-bottom: .5em;
+           padding-bottom: .5em;
+           font-weight: 900;
+           color: white;
+       }
+       .footer-item nav{
+           text-align: left;
+           display: flex;
+           flex-direction: column;
+       }
+         .footer-item a{
+           color: #ababab;; 
+           line-height: 1.4;
+           text-decoration: none;
+           padding: 5px 0;
+       }   
+       .main-footer .copyright{
+           text-align: center;
+           color: white;
+       }
+    
+
+
+}
+
+
+/* 平板以上=目前是寫桌機 */
+@media screen and (min-width: 768px){
+   .main-footer{
+       max-width: 1200px;
+       padding: 150px 0 0;
+       
+       margin: auto;
+   }
+   .main-footer .container{
+       display: flex;
+       width: 100%;
+       margin: auto;
+       align-items: center;
+       padding-bottom: 20px;
+       box-sizing: border-box;
+   }
+   .footer-item{
+       width: 0;
+       flex-grow: 1;
+       margin: 0 20px;
+   }
+   .footer-item h4{  
+       font-size: 24px;
+       border-bottom: 1px solid white;
+       margin-bottom: .5em;
+       padding-bottom: .5em;
+       font-weight: 900;
+       color: white;
+   }
+   .footer-item nav{
+       text-align: left;
+       display: flex;
+       flex-direction: column;
+   }
+   .footer-item a{
+       color: #ababab;; 
+       line-height: 1.4;
+       text-decoration: none;
+       padding: 5px 0;
+   }
+   .main-footer .copyright{
+       text-align: center;
+       color: white;
+   }
+   
+}

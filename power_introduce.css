@@ -1,0 +1,374 @@
+*{padding: 0;
+    margin: 0;
+    list-style: none;}
+    
+body{
+    
+    background-color: #363636;
+    font-family:微軟正黑體!important;
+    }
+ /* div中的文字 垂直置中的方法=寬高跟行高設定一樣
+     */
+   /* 一 */
+   #menu_control{
+    position: absolute;
+    z-index: 2;
+}
+.header{
+    height: 50px;
+    position: relative;
+}
+.logo{
+    width: 60px;
+    height: 40px;
+    margin-left: 10px;
+    box-sizing: border-box;
+    padding-left: 27px;
+    
+}
+.logo img{
+    vertical-align: top;
+}
+.menu_btn{
+    width: 40px;
+    height: 40px;
+    /* background-color: violet; */
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+.menu_btn span{
+    opacity: 0;
+    color: #fff;
+}
+.menu_btn::before{
+    content: "";
+    position: absolute;
+    height: 2px;
+    left: 2px;
+    width: 36px;
+    background-color: #aaa;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    box-shadow: 0px 8px 0px #aaa,
+                0px -8px 0px #aaa;
+   }
+   nav{
+       width: 100%;
+       height: calc(100vh - 50px);
+       padding-right: 27px;
+       padding-top: 27px;
+       position: absolute;
+       top: 50px;
+       left: 0;
+       left: -100%;
+       transform: .5s;
+       text-align: center;
+       z-index: 3;
+   }
+   nav a{
+       display: block;
+       text-decoration: none;
+       color:white;
+       padding: 10px 20px;
+       background-color: #363636;
+   }
+   nav a:hover{
+       color:#fca311;
+       
+   }
+   #menu_control{
+       /* visibility: hidden; */
+       display: none;
+   }
+
+   #menu_control:checked ~ .header nav{
+       left: 0;
+   }
+   @media screen and (min-width: 768px){
+       .menu_btn{
+           display: none;
+
+       }
+       .header{
+           display: flex;
+           justify-content: space-between;
+           background-color: transparent;
+           align-items: center;
+       }
+       .logo a{
+           display: block;
+           height: 40px;
+
+
+           
+       }
+      
+     
+       nav{
+           position: relative;
+           left: 0;
+           display: flex;
+           width: auto;
+           height: auto;
+           top: 0;
+       }
+       nav a{
+           border-bottom: none;
+
+       }
+       nav a:hover{
+           color:#fca311;
+         
+       }
+   }
+ /* 二 */
+  
+  .title_experience{
+    width: 100%;
+    margin: auto;
+    max-width: 1200px;
+    position:relative;
+    box-sizing: border-box;
+    margin-bottom: 5%;
+
+}
+.title_experience .pic img{
+    width: 100%;
+    /* object-fit: cover; */
+    /* aspect-ratio: 2/1; */
+    vertical-align: middle;
+}
+.title_experience h1{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    bottom: 42%;
+    color: white;
+    letter-spacing: 0.15em;
+    font-size: 20px;
+    
+}
+
+ .fitness_coach img{
+     width: 100%;
+     margin-top: 20px;
+     margin-bottom: 20px;
+     box-sizing: border-box;
+ }
+ .fitness_coach ul{
+     width: 80%;
+     margin: auto;
+ }
+ .fitness_coach ul li{
+     color: white;
+     width: 40%;
+     margin: auto;
+     padding: 10px;
+ }
+.fitness_coach .btn{
+     font-family: microsoft jhenghei,Sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    fill: #262626;
+    color: white;
+    background-color: #61ce7000;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 0;
+    box-shadow: 5px 5px 0 0 #ffc35c;
+    line-height: 63px;
+    margin-left: 105px;
+    
+}
+
+ /* 桌機專用 */
+ @media screen and (min-width: 768px){
+    .title_experience{
+        max-width: 1200;
+        width:100%;
+        position:relative;
+        box-sizing: border-box;
+        margin-bottom: 5%;
+        margin-top: 2%;
+    }
+    .title_experience .pic img{
+     width: 100%;
+     object-fit: cover;  
+     vertical-align: middle;
+    }
+    .title_experience h1{
+     position: absolute;
+     width: 100%;
+     text-align: center;
+     box-sizing: border-box;
+     bottom: 45%;
+     color: white;
+     letter-spacing: 0.15em;
+     font-size: 72px;
+     
+     
+    }
+ .fitness_coach{
+     width: 1200px;
+     max-width: 1200px;
+     margin: auto;
+ }
+ .fitness_coach .fitness_coach_introduce{
+     display: flex;
+ }
+ .fitness_coach img{
+     width: 550px;
+     object-fit: cover;
+     object-position: top;
+     aspect-ratio: 2/1;
+     padding: 20px;
+     box-sizing: border-box;
+ }
+ .fitness_coach ul{
+     width: 500px;
+     margin: auto;
+     margin-top: 20px;
+     box-sizing: border-box;
+     
+ }
+ .fitness_coach ul li{
+     color: white;
+     padding: 20px 0px 0px 0px;
+     box-sizing: border-box;
+ }
+.fitness_coach .btn{
+  
+    font-family: microsoft jhenghei,Sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    fill: #262626;
+    color: white;
+    background-color: #61ce7000;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 0;
+    box-shadow: 5px 5px 0 0 #ffc35c;
+    line-height: 63px;
+    margin-left: 300px;
+    box-sizing: border-box;
+    
+}
+
+.btn:hover{
+    background-color: black;
+}
+ 
+
+.fitness_coach .fitness_coach_introduce:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+ }
+ /* 八 */
+
+
+
+/* 手機專用 */
+@media screen and (max-width: 768px){
+    .main-footer{
+       width: 100%;
+       max-width: 1200px;
+      
+       
+       margin: auto;}
+       .main-footer .container{
+           display: flex;
+           width: 100%;
+           margin: auto;
+           align-items: center;
+           padding-bottom: 20px;
+           box-sizing: border-box;
+       }
+       .footer-item{
+           width: 0;
+           flex-grow: 1;
+           margin: 0 20px;
+       }
+       .footer-item h4{  
+           
+           font-size: 20px;
+           border-bottom: 1px solid white;
+           margin-bottom: .5em;
+           padding-bottom: .5em;
+           font-weight: 900;
+           color: white;
+       }
+       .footer-item nav{
+           text-align: left;
+           display: flex;
+           flex-direction: column;
+       }
+         .footer-item a{
+           color: #ababab;; 
+           line-height: 1.4;
+           text-decoration: none;
+           padding: 5px 0;
+       }   
+       .main-footer .copyright{
+           text-align: center;
+           color: white;
+       }
+    
+
+
+}
+
+
+/* 平板以上=目前是寫桌機 */
+@media screen and (min-width: 768px){
+   .main-footer{
+       max-width: 1200px;
+       padding: 150px 0 0;
+       
+       margin: auto;
+   }
+   .main-footer .container{
+       display: flex;
+       width: 100%;
+       margin: auto;
+       align-items: center;
+       padding-bottom: 20px;
+       margin-top: 20px;
+       padding-top: 20px;
+       box-sizing: border-box;
+   }
+   .footer-item{
+       width: 0;
+       flex-grow: 1;
+       margin: 0 20px;
+   }
+   .footer-item h4{  
+       font-size: 24px;
+       border-bottom: 1px solid white;
+       margin-bottom: .5em;
+       padding-bottom: .5em;
+       font-weight: 900;
+       color: white;
+   }
+   .footer-item nav{
+       text-align: left;
+       display: flex;
+       flex-direction: column;
+   }
+   .footer-item a{
+       color: #ababab;; 
+       line-height: 1.4;
+       text-decoration: none;
+       padding: 5px 0;
+   }
+   .main-footer .copyright{
+       text-align: center;
+       color: white;
+   }
+   
+}
+

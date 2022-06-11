@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="power_experience.css">
+</head>
+<body>
+         <!-- 一 -->
+         <input type="checkbox" name="" id="menu_control">
+         <div class="header">
+             <h1 class="logo"><a href="power_firstpage.html"><img src="pic/first_page/LOGO.png" alt=""></a></h1>
+             <label for="menu_control" class="menu_btn" >
+                 <span>選單</span>
+             </label>
+             <nav>
+                 <a href="power_experience.html">免費體驗</a>
+                 <a href="power_introduce.html">健身房介紹</a>
+                 <a href="power_course.html">課程</a>
+                 <a href="power_map.html">地圖</a>
+                 <a href="power_contact.html">聯絡我們</a>
+             </nav>
+         </div>
+   
+    <!-- 二 -->
+    <div class="title_experience">
+        <div class="pic"><img src="pic/map/003.jpg" alt=""></div>
+        <h1>馬上體驗</h1>
+    </div>  
+    <div class="big_frame">
+        <div class="feeetrial">
+                <div class="bigtxt">FREE TRIAL!</div>
+                <div class="txt">
+                    <h2>七天免費運動體驗</h2>
+                    <p>除了免費體驗七天還能免費體驗一堂課這間健身房的設備很齊全能練到想要練的部位教練也很專業!</p>
+                    <video autoplay muted loop id="myVideo">
+                        <source src="pic/experience/oppo.mp4" type="video/mp4">
+                    <!-- <img src="pic/experience/dance-removebg-preview.png" alt=""> -->
+                </div>
+            </div>
+        
+        <div class="form_txt">
+            <h2>7天免費體驗+免費一堂課程!</h2>
+            <!-- <p>想要改變就是現在開始!<br>
+                #帥氣#美麗#身材#自信心#減肥#肌力
+            </p> -->
+            <p>想要改變就是現在開始!
+                #帥氣#美麗#身材#自信心#減肥#肌力
+            </p>
+            <form action="/formprocess.php" method="post">
+                <p>Name:</p>
+                <p><input type="text" name="name" value="你的名字"></p>
+        
+                <p>Email:</p>
+                <p><input name="species" type="text"></p>
+        
+                <p>Comments: </p>
+                <p><textarea name="comments" rows="5" cols="20">你的留言</textarea></p>
+        
+                <p>請問你最有興趣學習的課程:</p>
+                <p><input type="radio" name="interest" value="html"> 有氧課程</p>
+                <p><input type="radio" name="interest" value="css"> 跑步課程</p>
+                <p><input type="radio" name="interest" value="js"> 重訓課程</p>
+        
+                <p><input type="submit" value="送出資料"></p>
+        
+            </form>
+        </div>
+    </div>
+     <!-- 八 -->
+<div class="main-footer">
+    <div class="container">
+        <div class="footer-item">
+            <h4>免費體驗</h4>
+                <nav>
+                    <a href="#">體驗課程</a>
+                    <a href="#">會員推薦</a>
+                    <a href="#">會員推薦</a>
+                </nav>
+        </div>
+        <div class="footer-item">
+            <h4>最新消息</h4>
+                <nav>
+                    <a href="#">最新活動</a>
+                    <a href="#">官方公告</a>
+                    <a href="#">全部消息</a>
+                </nav>
+        </div>
+        <div class="footer-item">
+            <h4>有氧課程</h4>
+                <nav>
+                    <a href="#">有氧老師</a>
+                    <a href="#">訓練方法</a>
+                    <a href="#">有氧介紹</a>
+                </nav>
+            </div>
+        <div class="footer-item">
+                <h4>聯絡我們</h4>
+                <nav>
+                    <a href="#">特約廠商</a>
+                    <a href="#">常見問題</a>
+                    <a href="#">服務表單</a>
+                </nav>
+        </div>
+    </div>
+    <div class="copyright">
+        本網站為緯育TibaMe前端設計工程師班學員專題作品，本平台僅供學習、展示之用此網站僅供學習使用 
+    </div>
+</div>
+</body>
+</html>

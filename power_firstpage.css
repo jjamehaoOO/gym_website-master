@@ -1,0 +1,930 @@
+/* 文字在DIV裡面重直置中的方法:設定高度跟行高是一樣的 */
+
+/* 如要使用顏色=black 14213D深藍 FCA311土金
+E5E5E5灰色 白色 */
+/* 體驗課程 更多課程 用按鈕連接到外面 更多課程現在選不到
+第二章教練圖 不要用橢圓的 有時間就改版面 */
+/* border-radius: 10px; 可用讓外框有點圓形的角度 */
+/* 目前畫面跑掉下方有卷軸 是因為更多課程還沒弄好 */
+/* 頁尾還沒做 ICON去BOOT5下載 */
+/* 介紹教練文字第二章反轉的距離還沒做 按鈕也還沒弄 */
+/* .introduce_coach 外框距離沒辦法設定?所以背景色彩連載一起了 目前設高度試看看*/
+*{padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;}
+    body{
+    font-family:微軟正黑體!important;
+    background-color: #363636;
+    }
+/* 一 */
+    #menu_control{
+        position: absolute;
+        z-index: 2;
+    }
+    .header{
+        height: 50px;
+        position: relative;
+    }
+    .logo{
+        width: 60px;
+        height: 40px;
+        margin-left: 10px;
+        box-sizing: border-box;
+        padding-left: 27px;
+    
+    }
+    .logo img{
+          vertical-align: top;
+    }
+    .menu_btn{
+            width: 40px;
+            height: 40px;
+            display: block;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+    }
+    .menu_btn span{
+            opacity: 0;
+            color: #fff;
+    }
+    .menu_btn::before{
+            content: "";
+            position: absolute;
+            height: 2px;
+            left: 2px;
+            width: 36px;
+            background-color: #aaa;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            box-shadow: 0px 8px 0px #aaa,
+            0px -8px 0px #aaa;
+    }
+    nav{
+            width: 100%;
+            height: calc(100vh - 50px);
+            padding-right: 27px;
+            padding-top: 27px;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            left: -100%;
+            transform: .5s;
+            text-align: center;
+            z-index: 3;
+    }
+    nav a{
+            display: block;
+            text-decoration: none;
+            color:white;
+            padding: 10px 20px;
+            background-color: #363636;
+    }
+    nav a:hover{
+        color:#fca311;
+        
+    }
+    #menu_control{
+        /* visibility: hidden; */
+        display: none;
+    }
+
+    #menu_control:checked ~ .header nav{
+        left: 0;
+    }
+    @media screen and (min-width: 768px){
+        .menu_btn{
+            display: none;
+        }
+        .header{
+            display: flex;
+            justify-content: space-between;
+            background-color: transparent;
+            align-items: center;
+        }
+        .logo a{
+            display: block;
+            height: 40px;
+
+
+            
+        }
+       
+      
+        nav{
+            position: relative;
+            left: 0;
+            display: flex;
+            width: auto;
+            height: auto;
+            top: 0;
+        }
+        nav a{
+            border-bottom: none;
+
+        }
+        nav a:hover{
+            color:#fca311;
+          
+        }
+    }
+ /* 二 */
+ .owl-carousel .owl-carousel_picture img{
+     padding: 30px;
+     box-sizing: border-box;
+     object-fit: cover;
+     /* fit=合身，適合 */
+     aspect-ratio: 2/1;
+     /* aspect-ratio=高寬比 
+     aspect=樣子，光景；容貌，神色。 */
+ }
+ .owl-carousel{
+     position: relative;
+
+ }
+ .owl-carousel .owl-nav button.owl-next{               
+    color: white;
+    font-size: 80px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+}
+ .owl-carousel .owl-nav button.owl-prev{
+    color: white;
+    font-size: 80px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.owl-dots{
+    padding-bottom: 100px;
+    box-sizing: border-box;
+}
+ /* 三 */
+ .title_course{
+    width: 100%;
+    margin: auto;
+    max-width: 1200px;
+    position:relative;
+    box-sizing: border-box;
+    margin-bottom: 5%;
+
+}
+.title_course .pic img{
+    width: 100%;
+    /* object-fit: cover; */
+    /* aspect-ratio: 2/1; */
+    vertical-align: middle;
+}
+.title_course h1{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    bottom: 42%;
+    color: white;
+    letter-spacing: 0.15em;
+    font-size: 20px;
+    
+}
+.course{
+    width: 100%;
+}
+.course .small_course .course_picture img{
+    width: 100%;
+    padding-top:30px;
+    box-sizing: border-box;
+    
+
+}
+.course .small_course .txt h2{ 
+    font-size: 24px;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ababab;
+    padding-bottom: .3em;
+    margin-bottom: .4em;
+ }
+ .course .small_course .txt p{ 
+     font-size: 20px;
+    margin: auto;
+    width: 300px;
+    box-sizing: border-box;
+    color: #ababab;
+    padding: 10px;
+    box-sizing: border-box;
+ }
+ .course .small_course .txt a{
+    /* margin-top: 50px;
+    box-sizing: border-box;
+   
+    display: inline-block;
+    background-color: darkred;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    transition: all 0.1s ease 0s;
+    position: relative;
+    text-decoration:none;
+    top: -3px;
+    text-align: center;
+   
+    box-shadow:0 0 10px 5px #363636; */
+     /* left: 150px; */
+     font-family: microsoft jhenghei,Sans-serif;
+     font-size: 16px;
+     font-weight: 900;
+     fill: #262626;
+     color: white;
+     background-color: #61ce7000;
+     border-style: solid;
+     border-width: 2px;
+     border-radius: 0;
+     box-shadow: 5px 5px 0 0 #ffc35c;
+     line-height: 63px;
+ }
+.button{
+     text-align: center;
+ }
+ 
+ .course .small_course .txt a:hover{
+     top: 0;
+ }
+ /* .course .small_course .txt .more_course{
+    color: white;
+    padding: 60px 0px 0px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration:none;
+ }此處選不到 想選更多課程 */
+
+
+
+@media screen and (min-width: 768px){
+    /* 最小寬度768以上會顯示 所以裡面放的是桌機*/
+   
+    .title_course{
+        width:100%;
+        /* max-width: 1200px; */
+        position:relative;
+        box-sizing: border-box;
+        margin-bottom: 5%;
+    
+    }
+    .title_course .pic img{
+     width: 100%;
+     object-fit: cover;
+     /* aspect-ratio: 2/1; */
+     vertical-align: middle;
+    }
+    .title_course h1{
+     position: absolute;
+     width: 100%;
+     text-align: center;
+     box-sizing: border-box;
+     bottom: 45%;
+     color: white;
+     letter-spacing: 0.15em;
+     font-size: 72px;
+     
+    }
+.course{
+   width: 1200px;
+   margin: auto;
+   display: flex;
+   padding-top:100px;
+}
+.course .small_course .course_picture img{
+   width: 100%;
+   object-fit: cover;
+   aspect-ratio: 2/1;
+   height: 200px;
+   padding: 10px;
+   box-sizing: border-box;
+}
+.course .small_course .txt h2{
+    font-size: 24px;
+   width: 300px;
+   margin: auto;
+   text-align: center;
+   color: white;
+   padding: 10px;
+   box-sizing: border-box;
+   border-bottom: 1px solid #ababab;
+   /* border-bottom-width:15px; */
+   padding-bottom: .7em;
+   margin-bottom: .4em;
+}
+.course .small_course .txt p{  font-size: 20px;
+   margin: auto;
+   width: 300px;
+   box-sizing: border-box;
+   color: #ababab;
+   padding: 10px;
+   box-sizing: border-box;
+   
+}
+.course .small_course .txt .experience{
+    color: white;
+    padding: 60px 20px 20px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    /* align-items: flex-end; */
+}
+.course .small_course .txt .button a{
+    /* color: white;
+    font-size: 15px;
+    box-sizing: border-box;
+    text-align: center;
+    left: 0;
+    background-color: darkred; */
+    font-family: microsoft jhenghei,Sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    fill: #262626;
+    color: white;
+    background-color: #61ce7000;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 0;
+    box-shadow: 5px 5px 0 0 #ffc35c;
+    line-height: 63px;
+    
+    
+}
+.course .small_course{
+    display: flex;
+    flex-direction: column;
+}
+.course .small_course .txt{
+    flex-grow: 1;
+    display: flex;
+flex-direction: column;
+}
+.course .small_course .button{
+    
+    margin-top: auto;
+    margin: auto;
+}
+    }
+    /* 四 */
+    .title_good{
+        width: 100%;
+        margin: auto;
+        max-width: 1200px;
+        position:relative;
+        box-sizing: border-box;
+        margin-bottom: 5%;
+ 
+    }
+    .title_good .pic img{
+        width: 100%;
+        /* object-fit: cover; */
+        /* aspect-ratio: 2/1; */
+        vertical-align: middle;
+    }
+    .title_good h2{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        bottom: 42%;
+        color: white;
+        letter-spacing: 0.15em;
+        font-size: 20px;
+        
+    }
+    .find_fitness_coach_benefit .find_fitness_coach_benefit_contnet p{
+        color: white;
+        font-size: 20px;
+        padding: 30px;
+        box-sizing: border-box;
+    }
+    .find_fitness_coach_benefit img{
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 2/1;
+    }
+    @media screen and (min-width: 768px){
+        /* 最小寬度768以上會顯示 所以裡面放的是桌機*/
+
+        .title_good{
+			width: 100%;
+			margin: auto;
+			/* max-width: 1200px; */
+			position:relative;
+			box-sizing: border-box;
+			margin-bottom: 5%;
+            margin-top: 10%;
+	 
+		}
+	 .title_good .pic img{
+		 width: 100%;
+		 object-fit: cover;
+		 /* aspect-ratio: 2/1; */
+		 vertical-align: middle;
+	 }
+	 .title_good h2{
+		 position: absolute;
+		 width: 100%;
+		 text-align: center;
+		 box-sizing: border-box;
+		 bottom: 45%;
+		 color: white;
+		 letter-spacing: 0.15em;
+		 font-size: 72px;
+		 
+	 }
+        .find_fitness_coach_benefit .find_fitness_coach_benefit_contnet p{
+            font-size: 20px;
+            color: white;
+            padding: 30px;
+            box-sizing: border-box;
+            line-height: 1.5;
+            letter-spacing: 1.5;
+        }
+      
+        }
+          /* 五 */
+          
+        @media screen and (max-width: 768px){
+            .title_coach{
+                width: 100%;
+                margin: auto;
+                max-width: 1200px;
+                position:relative;
+                box-sizing: border-box;
+                margin-bottom: 5%;
+         
+            }
+            .title_coach .pic img{
+                width: 100%;
+                /* object-fit: cover; */
+                /* aspect-ratio: 2/1; */
+                vertical-align: middle;
+            }
+            .title_coach h2{
+                position: absolute;
+                width: 100%;
+                text-align: center;
+                box-sizing: border-box;
+                bottom: 42%;
+                color: white;
+                letter-spacing: 0.15em;
+                font-size: 20px;
+                
+            }
+
+            .item .square{
+                width: 80%;
+                height: 300px;
+                background-color: darkred;
+                top: 50px;
+                margin: auto;
+                position: relative;
+                box-shadow: 20px -20px white;
+                /* box-shadow: 40px -40px black; */
+                 }
+                 .introduce_coach img{
+                padding-top: 10%;
+                width: 100%;
+                object-fit: cover;
+                height: 420px;
+                bottom: 1px;
+                /* aspect-ratio: 2/1; */
+                /* top: 65px; */
+                /* right: 20px; */
+                position: absolute;
+            }
+            .introduce_coach .txt{
+                background-color: rgba(0, 0, 0, .3);
+                width: 100%;
+                /* align-self: center; */
+                margin-top: 50px;
+                color: white;
+                position: absolute;
+                /* margin-top: 100px;
+                left: 450px; */
+                padding: 10px;
+                box-sizing: border-box;
+                line-height: 1.5;
+                letter-spacing: 0.152em;
+            }
+                
+            .introduce_coach .txt ul {
+                display: table;
+                 margin: 0 auto;
+                 /* padding-left: 70px; */
+                
+            }
+            .introduce_coach .reservation{
+                margin-top: 10px;
+                margin-bottom: 10px;
+                display: inline-block; 
+                margin-left: 160px;
+              font-size: 16px;
+              font-weight: 900;
+              fill: #262626;
+              color: #262626;
+              background-color: #61ce7000;
+              border-style: solid;
+              border-width: 2px;
+              border-radius: 0;
+               box-shadow: 5px 5px 0 0 #ffc35c;
+               color: white;
+               padding:5px 0;
+            box-sizing: border-box;
+            }
+        }
+            /* 桌機 */
+        @media screen and (min-width: 767px){
+            .title_coach{
+                width: 100%;
+                margin: auto;
+                /* max-width: 1200px; */
+                position:relative;
+                box-sizing: border-box;
+                margin-bottom: 5%;
+                margin-top: 10%;
+         
+            }
+         .title_coach .pic img{
+             width: 100%;
+             object-fit: cover;
+             /* aspect-ratio: 2/1; */
+             vertical-align: middle;
+         }
+         .title_coach h2{
+             position: absolute;
+             width: 100%;
+             text-align: center;
+             box-sizing: border-box;
+             bottom: 30%;
+             color: white;
+             letter-spacing: 0.15em;
+             font-size: 72px;
+             
+         }
+            .introduce_coach{
+                max-width: 1200px;
+                margin: auto;
+                display: flex; 
+                position: relative;}
+            .item{
+                
+                height: 450px;
+                display: flex;
+                background-color: rgba(0, 0, 0, .3);
+                /* align-items: flex-end; */
+                
+            }
+            .item .square{
+                width: 300px;
+                height: 300px;
+                background-color: darkred;
+                top: 50px;
+                margin: auto;
+                position: relative;
+                box-shadow: 20px -20px white;
+                /* box-shadow: 40px -40px black; */
+                 }
+            .introduce_coach img{
+                width: 100%;
+                object-fit: cover;
+                height: 420px;
+                bottom: 1px;
+                /* aspect-ratio: 2/1; */
+                /* top: 65px; */
+                /* right: 20px; */
+                position: absolute;
+            }
+            .introduce_coach .txt {
+                background-color: rgba(0, 0, 0, .7);
+                width: 600px;
+                align-self: center;
+                color: white;
+                position: relative;
+                /* top: 61px;
+                left: -57px; */
+                box-sizing: border-box;
+                line-height: 1.5;
+                letter-spacing: 0.152em;
+                padding: 2.5% 2%;
+                left: 0px;
+                margin-top: 28px;
+                box-sizing: border-box;
+            }
+                
+            .introduce_coach .txt ul {
+                display: table;
+                 margin: 0 auto;
+                 padding-left: 70px;
+                 padding-bottom: 15px;
+            }     
+                 
+
+            .introduce_coach .reservation{
+               
+                display: inline-block; 
+                margin-left: 320px;
+                font-size: 16px;
+                font-weight: 900;
+                fill: #262626;
+                color: white;
+                background-color: #61ce7000;
+                border-style: solid;
+                border-width: 2px;
+                border-radius: 0;
+                box-shadow: 5px 5px 0 0 #ffc35c;
+                        }
+
+            }
+          /* 六 */
+          .title_map{
+            width: 100%;
+            margin: auto;
+            max-width: 1200px;
+            position:relative;
+            box-sizing: border-box;
+            margin-bottom: 5%;
+            margin-top: 70%;
+     
+        }
+        .googleMap:hover{
+            position: relative;
+            z-index: 2;
+        }
+
+        .title_map .pic img{
+            margin-top :10% ;
+            width: 100%;
+            /* object-fit: cover; */
+            /* aspect-ratio: 2/1; */
+            vertical-align: middle;
+        }
+        .title_map h2{
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+            bottom: 42%;
+            color: white;
+            letter-spacing: 0.15em;
+            font-size: 20px;
+            
+        }
+
+        /* 七 */
+        /* 手機專用 */
+    @media screen and (max-width: 767px){
+        .map_material{
+			width: 100%;
+            margin-bottom :10%;
+            box-sizing: border-box;
+            
+		}
+        .map_material .item .googleMap{ /*父層,寬高取決於子層, width:100%, padding-bottom:75%撐開的,*/
+            position: relative;
+        }
+        .map_material .item .googleMap::before{
+            content:'';
+            display: block;
+            width: 100%;
+            height: 0;/* 寫這個是因為怕繼承父層的height, 所以寫了,把父層的height清掉*/
+            padding-bottom: 75%;
+            background-color: #ffa;
+        }
+         .map_material .item .googleMap iframe{
+                /*絕對定位到父層*/
+            position: absolute;
+            /*寬和高本身都有預設, 所以寫100%*/
+            width: 100%; 
+            height: 100%;
+            left: 0;
+            top: 0;
+             
+
+         }
+        .map_material .item{
+            width: 80%;
+            margin: auto;
+            padding: 0 5%;
+   
+        }
+        .map_material .txt{
+            width: 100%;
+            
+            /* margin: 0; */
+            
+            background-color: #F15720;
+            /* padding: 2%; */
+        }
+        .map_material .txt h4{ 
+            
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+      
+        .map_material .txt ul li{
+            letter-spacing:2.4px;
+            padding: 20px;
+            font-size: 20px;
+            line-height: 20px;
+            padding: 1%;
+            color: white;
+        }
+    }    
+	
+		 
+
+
+
+		
+ /* 平板以上=目前是寫桌機 */
+@media screen and (min-width: 768px){
+        .title_map{
+                    width: 100%;
+                    margin: auto;
+                    /* max-width: 1200px; */
+                    position:relative;
+                    box-sizing: border-box;
+                    margin-bottom: 5%;
+                    margin-top: 10%;
+             
+        }
+        .title_map .pic img{
+                 width: 100%;
+                 object-fit: cover;
+                 /* aspect-ratio: 2/1; */
+                 vertical-align: middle;
+        }
+         .title_map h2{
+                 position: absolute;
+                 width: 100%;
+                 text-align: center;
+                 box-sizing: border-box;
+                 bottom: 45%;
+                 color: white;
+                 letter-spacing: 0.15em;
+                 font-size: 72px;
+                 
+                 
+        }
+             
+		   .map_material{
+            max-width: 1200px;
+            width: 80%;
+            margin: auto;
+        }
+        .item{
+         display: flex;
+         align-items: center;
+         margin-bottom: 70px;
+         position: relative;
+        }
+        .map_material .map{
+         width: 55%;
+         background-color: red
+         ;
+        }
+        .map_material .map img{
+        
+         object-fit: cover;
+         /* aspect-ratio: 2/1; */
+         width: 100%;
+         vertical-align: middle;
+        }
+        .map_material .txt{
+         width: 55%;
+         background-color: #F15720;
+         padding: 25px;
+         box-sizing: border-box;
+         color: white;
+         line-height: 1.5;
+         letter-spacing: 0.15em;
+         position: relative;
+         z-index: 1;
+        }
+        .item >:first-child{
+         margin-right: -10%;
+        }
+        .map_material .power{
+            position: absolute;
+            padding-left: 180px;padding-bottom: 30px;
+            box-sizing: border-box;
+        }
+}
+/* 八 */
+
+
+
+/* 手機專用 */
+@media screen and (max-width: 768px){
+     .main-footer{
+        width: 100%;
+        max-width: 1200px;
+       
+        
+        margin: auto;}
+        .main-footer .container{
+            display: flex;
+            width: 100%;
+            margin: auto;
+            align-items: center;
+            padding-bottom: 20px;
+            box-sizing: border-box;
+        }
+        .footer-item{
+            width: 0;
+            flex-grow: 1;
+            margin: 0 20px;
+        }
+        .footer-item h4{  
+            
+            font-size: 20px;
+            border-bottom: 1px solid white;
+            margin-bottom: .5em;
+            padding-bottom: .5em;
+            font-weight: 900;
+            color: white;
+        }
+        .footer-item nav{
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+          .footer-item a{
+            color: #ababab;; 
+            line-height: 1.4;
+            text-decoration: none;
+            padding: 5px 0;
+        }   
+        .main-footer .copyright{
+            text-align: center;
+            color: white;
+        }
+     
+
+
+}
+
+
+/* 平板以上=目前是寫桌機 */
+@media screen and (min-width: 768px){
+    .main-footer{
+        max-width: 1200px;
+        padding: 150px 0 0;
+        
+        margin: auto;
+    }
+    .main-footer .container{
+        display: flex;
+        width: 100%;
+        margin: auto;
+        align-items: center;
+        padding-bottom: 20px;
+        box-sizing: border-box;
+    }
+    .footer-item{
+        width: 0;
+        flex-grow: 1;
+        margin: 0 20px;
+    }
+    .footer-item h4{  
+        font-size: 24px;
+        border-bottom: 1px solid white;
+        margin-bottom: .5em;
+        padding-bottom: .5em;
+        font-weight: 900;
+        color: white;
+    }
+    .footer-item nav{
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-item a{
+        color: #ababab;; 
+        line-height: 1.4;
+        text-decoration: none;
+        padding: 5px 0;
+    }
+    .main-footer .copyright{
+        text-align: center;
+        color: white;
+    }
+    
+}

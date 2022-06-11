@@ -1,0 +1,411 @@
+/* vertical-align: middle; 因為基線問題 讓圖片能跟基線位置一樣 */
+/* 有載轉換顏色的軟體 
+#F15720選起來+ctrl+r就可以轉換成RGB色彩的碼 background-color:rgb(紅,藍,黃,透明度) */ 
+/* 想讓標題滿版 但最大寬度有設 會卡到  */
+*{padding: 0;
+	margin: 0;
+	list-style: none;}
+   body{
+	   
+	   background-color: #363636;
+	   font-family:微軟正黑體!important;
+	   box-sizing: border-box;
+	  } 
+	   /* 一 */
+ #menu_control{
+	position: absolute;
+	z-index: 2;
+}
+.header{
+	height: 50px;
+	position: relative;
+}
+.logo{
+	width: 60px;
+	height: 40px;
+	margin-left: 10px;
+	box-sizing: border-box;
+	padding-left: 27px;
+	
+}
+.logo img{
+	vertical-align: top;
+}
+.menu_btn{
+	width: 40px;
+	height: 40px;
+	/* background-color: violet; */
+	display: block;
+	position: absolute;
+	top: 5px;
+	right: 10px;
+}
+.menu_btn span{
+	opacity: 0;
+	color: #fff;
+}
+.menu_btn::before{
+	content: "";
+	position: absolute;
+	height: 2px;
+	left: 2px;
+	width: 36px;
+	background-color: #aaa;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	box-shadow: 0px 8px 0px #aaa,
+				0px -8px 0px #aaa;
+   }
+   nav{
+	   width: 100%;
+	   height: calc(100vh - 50px);
+	   padding-right: 27px;
+	   padding-top: 27px;
+	   position: absolute;
+	   top: 50px;
+	   left: 0;
+	   left: -100%;
+	   transform: .5s;
+	   text-align: center;
+	   z-index: 3;
+   }
+   nav a{
+	   display: block;
+	   text-decoration: none;
+	   color:white;
+	   padding: 10px 20px;
+	   background-color: #363636;
+   }
+   nav a:hover{
+	   color:#fca311;
+	   
+   }
+   #menu_control{
+	   /* visibility: hidden; */
+	   display: none;
+   }
+
+   #menu_control:checked ~ .header nav{
+	   left: 0;
+   }
+   @media screen and (min-width: 768px){
+	   .menu_btn{
+		   display: none;
+	   }
+	   .header{
+		   display: flex;
+		   justify-content: space-between;
+		   background-color: transparent;
+		   align-items: center;
+	   }
+	   .logo a{
+		   display: block;
+		   height: 40px;
+
+
+		   
+	   }
+	  
+	 
+	   nav{
+		   position: relative;
+		   left: 0;
+		   display: flex;
+		   width: auto;
+		   height: auto;
+		   top: 0;
+	   }
+	   nav a{
+		   border-bottom: none;
+
+	   }
+	   nav a:hover{
+		   color:#fca311;
+		 
+	   }
+   }
+/* 二 */
+.title_map{
+	width: 100%;
+	margin: auto;
+	max-width: 1200px;
+	position:relative;
+	box-sizing: border-box;
+	margin-bottom: 5%;
+
+}
+.googleMap:hover{
+	position: relative;
+	z-index: 2;
+}
+
+.title_map .pic img{
+	width: 100%;
+	/* object-fit: cover; */
+	/* aspect-ratio: 2/1; */
+	vertical-align: middle;
+}
+.title_map h2{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	box-sizing: border-box;
+	bottom: 42%;
+	color: white;
+	letter-spacing: 0.15em;
+	font-size: 20px;
+	
+}
+/* 手機專用 */
+@media screen and (max-width: 767px){
+.map_material{
+	width: 100%;
+	
+	
+}
+.map_material .item .googleMap{ /*父層,寬高取決於子層, width:100%, padding-bottom:75%撐開的,*/
+	position: relative;
+	margin-top: 40px;
+	box-sizing: border-box;
+}
+.map_material .item .googleMap::before{
+	content:'';
+	display: block;
+	width: 100%;
+	height: 0;/* 寫這個是因為怕繼承父層的height, 所以寫了,把父層的height清掉*/
+	padding-bottom: 75%;
+	background-color: #ffa;
+}
+ .map_material .item .googleMap iframe{
+		/*絕對定位到父層*/
+	position: absolute;
+	/*寬和高本身都有預設, 所以寫100%*/
+	width: 100%; 
+	height: 100%;
+	left: 0;
+	top: 0;
+	 
+
+ }
+.map_material .item{
+	width: 80%;
+	margin: auto;
+	padding: 0 5%;
+	position: relative;
+
+}
+.map_material .txt{
+	width: 100%;
+	margin-bottom: 40px;
+	box-sizing: border-box;
+	/* margin: 0; */
+	
+	background-color: #F15720;
+	/* padding: 2%; */
+}
+.map_material .txt h4{ 
+    margin-top: 40px;
+	box-sizing: border-box;
+	color: white;
+	font-size: 1.5rem;
+	font-weight: 900;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+.map_material .txt ul li{
+	letter-spacing:2.4px;
+	padding: 20px;
+	font-size: 20px;
+	line-height: 20px;
+	padding: 1%;
+	color: white;
+}
+.map_material .power{
+	position: absolute;
+	left: 0;
+	z-index: 1;
+	padding-top: 80px;
+	padding-left: 50px;
+	box-sizing: border-box;
+}
+}    
+/* 平板以上=目前是寫桌機 */
+@media screen and (min-width: 768px){
+.title_map{
+			width: 100%;
+			margin: auto;
+			/* max-width: 1200px; */
+			position:relative;
+			box-sizing: border-box;
+			margin-bottom: 5%;
+			margin-top: 2%;
+	 
+}
+.title_map .pic img{
+		 width: 100%;
+		 object-fit: cover;
+		 /* aspect-ratio: 2/1; */
+		 vertical-align: middle;
+}
+ .title_map h2{
+		 position: absolute;
+		 width: 100%;
+		 text-align: center;
+		 box-sizing: border-box;
+		 bottom: 45%;
+		 color: white;
+		 letter-spacing: 0.15em;
+		 font-size: 72px;
+		 
+		 
+}
+	 
+.map_material{
+	max-width: 1200px;
+	width: 80%;
+	margin: auto;
+}
+.item{
+ display: flex;
+ align-items: center;
+ margin-bottom: 70px;
+ position: relative;
+}
+.map_material .map{
+ width: 55%;
+ background-color: red
+ ;
+}
+.map_material .map img{
+ /* width: 70%; */
+ object-fit: cover;
+ aspect-ratio: 2/1;
+ width: 100%;
+ vertical-align: middle;
+}
+.map_material .txt{
+ width: 55%;
+ background-color: #F15720;
+ padding: 25px;
+ box-sizing: border-box;
+ color: white;
+ line-height: 1.5;
+ letter-spacing: 0.15em;
+ position: relative;
+ z-index: 1;
+}
+.item >:first-child{
+ margin-right: -10%;
+ 
+}
+.map_material .power{
+	position: absolute;
+	padding-left: 180px;padding-bottom: 30px;
+	box-sizing: border-box;
+}
+}
+/* 八 */
+
+
+
+/* 手機專用 */
+@media screen and (max-width: 768px){
+	.main-footer{
+	   width: 100%;
+	   max-width: 1200px;
+	  
+	   
+	   margin: auto;}
+	   .main-footer .container{
+		   display: flex;
+		   width: 100%;
+		   margin: auto;
+		   align-items: center;
+		   padding-bottom: 20px;
+		   box-sizing: border-box;
+	   }
+	   .footer-item{
+		   width: 0;
+		   flex-grow: 1;
+		   margin: 0 20px;
+	   }
+	   .footer-item h4{  
+		   font-size: 20px;
+		   border-bottom: 1px solid white;
+		   margin-bottom: .5em;
+		   padding-bottom: .5em;
+		   font-weight: 900;
+		   color: white;
+	   }
+	   .footer-item nav{
+		   text-align: left;
+		   display: flex;
+		   flex-direction: column;
+	   }
+		 .footer-item a{
+		   color: #ababab;; 
+		   line-height: 1.4;
+		   text-decoration: none;
+		   padding: 5px 0;
+	   }   
+	   .main-footer .copyright{
+		   text-align: center;
+		   color: white;
+	   }
+	   .main-footer .container .footer-item h4{
+		   font-size: 13px;
+	   }
+	
+
+
+}
+
+
+/* 平板以上=目前是寫桌機 */
+@media screen and (min-width: 768px){
+   .main-footer{
+	   max-width: 1200px;
+	   padding: 150px 0 0;
+	   
+	   margin: auto;
+   }
+   .main-footer .container{
+	   display: flex;
+	   width: 100%;
+	   margin: auto;
+	   align-items: center;
+	   padding-bottom: 20px;
+	   box-sizing: border-box;
+   }
+   .footer-item{
+	   width: 0;
+	   flex-grow: 1;
+	   margin: 0 20px;
+   }
+   .footer-item h4{  
+	   font-size: 24px;
+	   border-bottom: 1px solid white;
+	   margin-bottom: .5em;
+	   padding-bottom: .5em;
+	   font-weight: 900;
+	   color: white;
+   }
+   .footer-item nav{
+	   text-align: left;
+	   display: flex;
+	   flex-direction: column;
+   }
+   .footer-item a{
+	   color: #ababab;; 
+	   line-height: 1.4;
+	   text-decoration: none;
+	   padding: 5px 0;
+   }
+   .main-footer .copyright{
+	   text-align: center;
+	   color: white;
+   }
+   
+}
